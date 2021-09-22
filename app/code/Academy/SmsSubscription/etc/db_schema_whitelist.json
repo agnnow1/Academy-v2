@@ -1,0 +1,16 @@
+{
+    "sms_subscription": {
+        "column": {
+            "subscription_id": true,
+            "customer_id": true,
+            "telephone": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SMS_SUBSCRIPTION_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+        }
+    }
+}

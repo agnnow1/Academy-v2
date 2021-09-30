@@ -5,7 +5,7 @@
             <block class="Magento\Customer\Block\Account\SortLinkInterface" ifconfig="sms_subscription/general/enable" name="customer-account-navigation-sms_subscription">
                 <arguments>
                     <argument name="path" xsi:type="string">sms_subscription/index/index</argument>
-                    <argument name="label" xsi:type="string" translate="true">SMS Subscription</argument>
+                    <argument name="label" xsi:type="string" translate="true">SMS Subscriptions</argument>
                 </arguments>
             </block>
         </referenceBlock>

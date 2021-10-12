@@ -10,7 +10,8 @@
         },
         "constraint": {
             "PRIMARY": true,
-            "SMS_SUBSCRIPTION_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+            "SMS_SUBSCRIPTION_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true,
+            "SMS_SUBSCRIPTION_TELEPHONE": true
         }
     }
 }

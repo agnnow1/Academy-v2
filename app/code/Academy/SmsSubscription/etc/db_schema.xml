@@ -12,6 +12,9 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="subscription_id"/>
         </constraint>
+        <constraint xsi:type="unique" referenceId="SMS_SUBSCRIPTION_TELEPHONE">
+            <column name="telephone" />
+        </constraint>
         <constraint xsi:type="foreign"
                     referenceId="SMS_SUBSCRIPTION_CUSTOMER_ID_CUSTOMER_ENTITY_ID"
                     table="sms_subscription"

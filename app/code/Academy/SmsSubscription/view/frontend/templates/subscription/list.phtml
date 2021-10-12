@@ -14,34 +14,54 @@ $subscriptions = $viewModel->getSubscriptions();
 <?php if ($viewModel->getPagerHtml()): ?>
     <div class="order-products-toolbar toolbar bottom"><?= $viewModel->getPagerHtml(); ?></div>
 <?php endif ?>
-<div class="table-wrapper orders-history">
-    <table class="data table table-order-items history"
-           id="my-orders-table">
-        <caption class="table-caption"><?= __('Grid Record') ?></caption>
-        <thead>
-        <tr>
-            <th scope="col" class="col id"><?= __('ID') ?></th>
-            <th scope="col" class="col title"><?= __('Status') ?></th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        /** @var \Academy\SmsSubscription\Model\Subscription $subscription */
-        foreach ($subscriptions as $subscription): ?>
-        <tr>
-            <td data-th="<?= $escaper->escapeHtml(__('ID')) ?>"
-                class="col id">
-                <?= $subscription->getSubscriptionId() ?>
-            </td>
-            <td data-th="<?= $escaper->escapeHtml(__('Status')) ?>"
-                class="col product">
-                <?= $subscription->getStatus() ?>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
+<form action="<?= $escaper->escapeUrl($viewModel->getUpdateUrl()) ?>" method="post">
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history"
+               id="my-orders-table">
+            <caption class="table-caption"><?= __('Grid Record') ?></caption>
+            <thead>
+            <tr>
+                <th scope="col" class="col id"><?= __('ID') ?></th>
+                <th scope="col" class="col title"><?= __('Phone') ?></th>
+                <th scope="col" class="col title"><?= __('Status') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            /** @var \Academy\SmsSubscription\Model\Subscription $subscription */
+            foreach ($subscriptions as $subscription): ?>
+                <tr>
+                    <td>
+                        <span><?= $escaper->escapeHtml($subscription->getSubscriptionId()) ?></span>
+                    </td>
+                    <td>
+                        <span><?= $escaper->escapeHtml($subscription->getPhone()) ?></span>
+                    </td>
+                    <td>
+                        <input type="hidden" name="subscription[<?= $subscription->getSubscriptionId() ;?>]" value="0" />
+                        <input type="checkbox"
+                               name="subscription[<?= $subscription->getSubscriptionId() ;?>]"
+                               id="subscription"
+                               value="1"
+                            <?php if ($viewModel->getIsSubscribed($subscription)) : ?>
+                                checked="checked"
+                            <?php endif; ?>
+                               class="checkbox">
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="actions">
+        <button class="action subscribe primary"
+                title="<?= $escaper->escapeHtmlAttr(__('Update')) ?>"
+                type="submit"
+                aria-label="Update">
+            <span><?= $escaper->escapeHtml(__('Update')) ?></span>
+        </button>
+    </div>
+</form>
 <?php else: ?>
     <div class="message info empty">
         <span><?= __('No any record.'); ?></span>

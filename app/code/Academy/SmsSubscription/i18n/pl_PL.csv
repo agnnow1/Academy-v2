@@ -1,9 +1,17 @@
+"Thank you for your subscription.","Dziękujemy za subskrypcję."
+"Phone number is already subscribed.","Ten numer jest już zapisany."
+"Sms Subscription","Subskrypcja Sms"
+"Sign Up for Our Sms Newsletter:","Zapisz się do naszego Newslettera Sms:"
+"Enter your phone number","Podaj numer telefonu"
+Subscribe,Subscribe
 "Grid Record","Grid Record"
 ID,ID
+Phone,Telefon
 Status,Status
+Update,Aktualizuj
 "No any record.","Brak wyników."
 Academy,Academy
 SmsSubscription,SmsSubscription
 General,General
 Enable,Enable
-"SMS Subscriptions","Subskrypcje SMS"
+"SMS Subscriptions","SMS Subscriptions"

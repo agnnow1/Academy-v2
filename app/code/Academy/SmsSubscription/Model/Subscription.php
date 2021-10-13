@@ -6,6 +6,8 @@ use Magento\Framework\Model\AbstractModel;
 
 class Subscription extends AbstractModel
 {
+    const STATUS_UNSUBSCRIBED = 0;
+    const STATUS_SUBSCRIBED = 1;
     protected function _construct()
     {
         $this->_init('Academy\SmsSubscription\Model\ResourceModel\Subscription');
@@ -28,7 +30,7 @@ class Subscription extends AbstractModel
 
     public function getPhone(): string
     {
-        return (string) $this->getData('phone');
+        return (string) $this->getData('telephone');
     }
 
     public function getCreatedAt()

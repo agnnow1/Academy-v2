@@ -1,0 +1,41 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+
+/** @var \Academy\SmsSubscription\ViewModel\SubscriptionList $viewModel */
+$viewModel = $block->getViewModel();
+?>
+
+<div class="block newsletter">
+    <div class="title"><strong><?= $escaper->escapeHtml(__('Sms Subscription')) ?></strong></div>
+    <div class="content">
+        <form class="form subscribe"
+              novalidate
+              action="<?= $escaper->escapeUrl($viewModel->getFormAction()) ?>"
+              method="post"
+              data-mage-init='{"validation": {"errorClass": "mage-error"}}'>
+            <div class="field newsletter">
+                <div class="control">
+                    <label for="phone">
+                        <span class="label">
+                            <?= $escaper->escapeHtml(__('Sign Up for Our Sms Newsletter:')) ?>
+                        </span>
+                        <input name="phone" type="text" id="phone"
+                               placeholder="<?= $escaper->escapeHtml(__('Enter your phone number')) ?>"
+                               data-mage-init='{"mage/trim-input":{}}'
+                               data-validate="{required:true}"
+                        />
+                    </label>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action subscribe primary"
+                        title="<?= $escaper->escapeHtmlAttr(__('Subscribe')) ?>"
+                        type="submit"
+                        aria-label="Subscribe">
+                    <span><?= $escaper->escapeHtml(__('Subscribe')) ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -14,11 +14,9 @@ class AddAttributesToUiDataProvider
             return $result;
         }
 
-        $column = 'entity_id';
-
         $result->getSelect()->joinLeft(
             ['ce' => $result->getTable('customer_entity')],
-            'ce.' . $column . ' = main_table.customer_id',
+            'ce.entity_id = main_table.customer_id',
             ['name' => new \Zend_Db_Expr('CONCAT(ce.firstname, " ", ce.lastname)')]
         );
 

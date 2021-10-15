@@ -41,7 +41,13 @@ class MassDelete extends Action implements HttpPostActionInterface
         $collection = $this->filter->getCollection($this->collectionFactory->create());
         $subscriptionDeleted = 0;
         foreach ($collection->getItems() as $subscription) {
-            $this->subscriptionManager->deleteSubscription($subscription);
+            try {
+                $this->subscriptionManager->deleteSubscription($subscription);
+            } catch (\Exception $e) {
+                $this->messageManager->addErrorMessage(
+                    __('Could not delete subscription with id %1', $subscription->getSubscriptionId())
+                );
+            }
             $subscriptionDeleted++;
         }
 

@@ -60,6 +60,9 @@ class SubscriptionManager
         $this->subscriptionResource->save($subscription);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function deleteSubscription(Subscription $subscription): void
     {
         $this->subscriptionResource->delete($subscription);

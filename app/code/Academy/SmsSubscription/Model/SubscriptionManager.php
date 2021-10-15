@@ -59,4 +59,12 @@ class SubscriptionManager
         $subscription->setData('updated_at', $date->format('Y-m-d H:i:s'));
         $this->subscriptionResource->save($subscription);
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function deleteSubscription(Subscription $subscription): void
+    {
+        $this->subscriptionResource->delete($subscription);
+    }
 }

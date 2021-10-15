@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Academy_SmsSubscription::subscriptions"
+             title="Sms Subscriptions"
+             module="Academy_SmsSubscription"
+             sortOrder="1000"
+             parent="Magento_Backend::marketing_communications"
+             resource="Academy_SmsSubscription::manage"
+             action="academy_sms_subscription/index/index"/>
+    </menu>
+</config>

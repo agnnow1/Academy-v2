@@ -15,6 +15,8 @@ use Magento\Ui\Component\MassAction\Filter;
 
 class MassDelete extends Action implements HttpPostActionInterface
 {
+    const ADMIN_RESOURCE = 'Academy_SmsSubscription::delete';
+
     protected CollectionFactory $collectionFactory;
 
     protected Filter $filter;

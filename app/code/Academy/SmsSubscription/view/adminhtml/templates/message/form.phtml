@@ -1,0 +1,38 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+
+/** @var \Academy\SmsSubscription\ViewModel\SendMessage $viewModel */
+
+$viewModel = $block->getViewModel();
+
+?>
+<form
+    action="<?= $viewModel->getAction() ;?>"
+    method="post"
+    class="form">
+    <input type="hidden" name="form_key" value="<?= $viewModel->getFormKey() ?>" />
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= __('Send message to active subscribers') ;?></span></legend><br>
+        <div class="field required">
+            <label for="message" class="label">
+                <span><?= __('Message') ?></span>
+            </label>
+
+            <div class="control">
+                <textarea name="message"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?= __('Submit') ?>">
+                <span><?= __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+

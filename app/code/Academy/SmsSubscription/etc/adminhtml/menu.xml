@@ -6,7 +6,7 @@
              module="Academy_SmsSubscription"
              sortOrder="1000"
              parent="Magento_Backend::marketing_communications"
-             resource="Academy_SmsSubscription::manage"
+             resource="Academy_SmsSubscription::menu"
              action="academy_sms_subscription/index/index"/>
     </menu>
 </config>

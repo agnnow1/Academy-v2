@@ -11,6 +11,8 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Index extends Action implements HttpGetActionInterface
 {
+    const ADMIN_RESOURCE = 'Academy_SmsSubscription::view';
+
     protected PageFactory $pageFactory;
 
     public function __construct(

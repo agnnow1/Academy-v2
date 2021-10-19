@@ -21,4 +21,20 @@ class Config
             ScopeInterface::SCOPE_STORE
         );
     }
+
+    public function getApiKey()
+    {
+        return $this->scopeConfig->getValue(
+            'sms_subscription/api/api_key',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    public function getApiUrl()
+    {
+        return $this->scopeConfig->getValue(
+            'sms_subscription/api/api_url',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
 }

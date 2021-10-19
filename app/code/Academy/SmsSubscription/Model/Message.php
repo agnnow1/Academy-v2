@@ -9,21 +9,21 @@ use Magento\Framework\Serialize\Serializer\Json;
 
 class Message
 {
-    const API_KEY = 'Tra1l3rParkB0y5';
-    const API_URL = 'https://kbbswfakqv.cfolks.pl/api/sms/send';
-
     protected CollectionFactory $subscriptionCollectionFactory;
     protected Curl $curl;
     protected Json $json;
+    protected Config $config;
 
     public function __construct(
         CollectionFactory $subscriptionCollectionFactory,
         Curl $curl,
-        Json $json
+        Json $json,
+        Config $config
     ) {
         $this->subscriptionCollectionFactory = $subscriptionCollectionFactory;
         $this->curl = $curl;
         $this->json = $json;
+        $this->config = $config;
     }
 
     /**
@@ -41,10 +41,16 @@ class Message
             ];
         }
 
-        $this->curl->addHeader("Content-Type", "application/json");
-        $this->curl->addHeader("X-API-KEY", self::API_KEY);
+        if(empty($data)) {
+            return;
+        }
 
-        $this->curl->post(self::API_URL, $this->json->serialize($data));
+        $apiKey = $this->config->getApiKey();
+        $apiUrl = $this->config->getApiUrl();
+        $this->curl->addHeader("Content-Type", "application/json");
+        $this->curl->addHeader("X-API-KEY", $apiKey);
+
+        $this->curl->post($apiUrl, $this->json->serialize($data));
 
         $status = $this->curl->getStatus();
 

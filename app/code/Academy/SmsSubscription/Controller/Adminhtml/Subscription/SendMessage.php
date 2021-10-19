@@ -13,6 +13,8 @@ use Magento\Framework\View\Result\PageFactory;
 
 class SendMessage extends Action implements HttpGetActionInterface, HttpPostActionInterface
 {
+    const ADMIN_RESOURCE = 'Academy_SmsSubscription::send';
+
     protected PageFactory $pageFactory;
     protected RequestInterface $request;
     protected Message $message;

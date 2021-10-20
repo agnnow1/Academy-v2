@@ -25,12 +25,10 @@
                 <field id="api_key" translate="label" type="text"
                        sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>API KEY</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="api_url" translate="label" type="text"
                        sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>API URL</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
         </section>

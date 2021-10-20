@@ -5,7 +5,11 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Academy_SmsSubscription::menu" title="Academy SmsSubscription Menu" sortOrder="10" >
                     <resource id="Academy_SmsSubscription::delete" title="Delete" sortOrder="100" />
+                    <resource id="Academy_SmsSubscription::send" title="Send" sortOrder="100" />
                     <resource id="Academy_SmsSubscription::view" title="View" sortOrder="150"/>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Academy_SmsSubscription::module_config" title="Sms Subscription Configuration" sortOrder="100"/>
                 </resource>
             </resource>
         </resources>
